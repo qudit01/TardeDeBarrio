@@ -1,0 +1,30 @@
+
+<h4 class="comments">
+  <strong><%= comment.date_of_publication %><strong></h4>
+  <div class= "<%= klass %>">
+  <div data-controller="answers give"
+    data-give-url-value="<%= student_comment_like_path(comment.student_id, comment.id)%>">
+    <button class="drop_down", data-action="click->answers#seeAnswers">
+      <%= image_tag 'chevron-down.png'%>
+    </button>
+    <p class="user_name_comment"> <%= comment.name %></p>
+    <strong><%= comment.time %></strong>
+    <button id="<% dom_id(comment, :button) %>" data-action="click->give#giveLike" class="like_img">
+      <%= image_tag Like.where(likeable: comment, given:true).exists? ? 'like-given.png' : 'like.png' %>
+    </button>
+    <span class="like comment_like_<%= comment.id %>" id="<%= dom_id(comment, :span)%>" data-give-target="likeCount">
+      <%= Like.where(likeable: comment, given:true).count %>
+    </span>
+    <p><%= comment.content %></p>
+    <% comment.files.map do |f|%>
+        <%= link_to f.blob.filename, rails_blob_path(f, disposition: 'preview'), target: :_blank, download: true %>
+      <%end%>
+    <div class="hide" id="hide_id" data-answers-target="hidden_content">
+      <% if comment.answers_list.count > 0 %>
+        <hr>
+        <%= render comment.answers_list %>
+      <% end %>
+      <%= render 'answers/answer_form', comment: comment %>
+    </div>
+  </div>
+</div>

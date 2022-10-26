@@ -1,0 +1,32 @@
+<%= form_with model: @student, class:"form_margin_top" do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name, class:"textBox"%>
+    <div class="error_message"><%= @student.errors[:name].to_sentence%></div>
+
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, class:"textBox"%>
+    <div class="error_message"><%= @student.errors[:last_name].to_sentence%></div>
+
+    <%= form.label :birthday %>
+    <%= form.date_field:birthday, class:"textBox"%>
+    <div class="error_message"><%= @student.errors[:birthday].to_sentence%></div>
+
+    <%= form.label :address %>
+    <%= form.text_field :address, class:"textBox"%>
+    <div class="error_message"><%= @student.errors[:address].to_sentence%></div>
+
+    <%= form.label :scholarity %>
+    <%= form.select(:scholarity,Student.scholarities.keys, { }, { class: "textBox" } ) %>
+    <div class="error_message"><%= @student.errors[:scholarity].to_sentence%></div>
+
+    <%= form.label :goes_to_school, t('.goes'), class:'radio-buttons-label' %>
+    <section class="radio-buttons">   
+      <%= form.radio_button(:goes_to_school, true) %>
+      <%= form.label(:assists, t('.true')) %>
+
+      <%= form.radio_button(:goes_to_school, false) %>
+      <%= form.label(:assists, t('.false')) %>
+      <div class="error_message"><%= @student.errors[:goes_to_school].to_sentence%></div>
+    </section>
+    <%= form.submit 'Registrar Estudiante', class:"btn new_user" %>
+<% end %>

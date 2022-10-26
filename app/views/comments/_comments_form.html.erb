@@ -1,0 +1,10 @@
+<%= form_with(model: [@student, Comment.new], data: { controller: "emoji-picker" } ) do |f| %>
+  <%= f.text_area :content, class:"text_comment", data: { target: "emoji-picker.input" }, placeholder: t('.placeholder')  %>
+  <%= f.check_box :highlight%><span class="check_si"><%= t('.highlight') %></span>
+  <span data-action="click->emoji-picker#toggle" data-emoji-picker-target="button"> <%= image_tag("smile.png", class: 'icon_comment')%> </span>
+  <%= f.drag_and_drop_file_field :files, accept: Consts::MIME_TYPE_FILE_EXTENSIONS  do %>
+    <%= image_tag('image.png', class: 'icon_comment') %>
+  <% end %>
+  <%= content_tag(:i, nil, class: "fad fa-smile text-gray-400") %>
+  <%= f.submit 'Publish', id: 'btn_public', class: "btn new_user" %>
+<% end %>

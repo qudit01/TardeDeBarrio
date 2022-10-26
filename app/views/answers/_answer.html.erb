@@ -1,0 +1,12 @@
+<div class="comment_answer" data-controller="give"
+  data-give-url-value="<%= student_comment_answer_like_path(answer.student_id, answer.comment_id, answer)%>">
+  <p class="user_name_comment"><%= answer.name %></p>
+  <strong><%= answer.time %></strong>
+    <button data-action="click->give#giveLike" class="like_img">
+      <%= image_tag('like.png') %>
+    </button>
+  <span class="like answer_like_<%= answer.id %>" id="<%= dom_id(answer, :span)%>" data-give-target="likeCount">
+    <%= Like.where(likeable: answer).count%>
+  </span>
+  <p><%= answer.content %></p>
+</div>

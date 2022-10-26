@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>TardeDeBarrio</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+</head>
+
+<body>
+  <%= render "layouts/navbar"%>
+  <% if logged_in? %>
+  <!--render nav--->
+  <% end %>
+  <%= turbo_frame_tag :modal %>
+  <section>
+    <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+
+    <% if flash[:alert] %>
+    <div class="alert"><%= flash[:alert] %></div>
+    <% end %>
+
+    <% if flash[:error] %>
+    <%= flash[:error] %>
+    <% end %>
+  </section>
+  <%= yield %>
+</body>
+
+</html>

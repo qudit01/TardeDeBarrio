@@ -1,0 +1,18 @@
+<% if flash[:alert] %>
+  <div class="alert"><%= flash[:alert] %></div>
+<% end %>
+<%= form_with url: sign_in_path, method: :post , class:"form_inicio" do |form| %>
+  <%= form.label :email %>
+  <%= form.text_field :email, class: "textBox", placeholder: t('.email_ph')%>
+  <%= form.label :password, t('.pass') %>
+  <%= form.password_field :password, class:"textBox", placeholder: t('.pass_ph')  %>
+  <%= form.check_box :remember%>
+  <%= form.label t('.remember'), id:"rememberme"%>
+  <br>
+  <%= form.submit t('.login'), class: "btn" %>
+  <br>
+  <%= link_to t('.pass_forgotten'), class: "login_links"%>
+  <br>
+  <%= image_tag 'g-logo.png', class: "g-logo" %>
+  <%= link_to t('.g_login'), class:"login_links"%>
+<% end %>

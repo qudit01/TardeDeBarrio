@@ -1,0 +1,4 @@
+<%= form_with(model: [@student, comment, Answer.new]) do |f| %>
+  <%= f.text_area :content, class:"text_comment answer", placeholder: t('.placeholder') %>
+  <%= f.submit 'Answer', class: "btn new_user" %>
+<% end %>

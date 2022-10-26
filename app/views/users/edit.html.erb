@@ -1,0 +1,13 @@
+<section class="index_user">
+<%= turbo_frame_tag :modal do %>
+  <div class="modals" data-controller="turbomodals">
+    <div class="form_container">
+      <div class="title">
+        <h1 class="add_edit_title"><%= t('.tittle') %></h1>
+      </div>
+      <button data-action="click->turbomodals#submitEnd">cerrar</button> 
+      <%= render "form_edit", user: @user %>
+    </div>
+  </div>
+<% end %>
+</section>

@@ -1,0 +1,15 @@
+<%= form_with model: @user, class:"form_margin_top" do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name, class:"textBox"%>
+    <div class="error_message"><%= @user.errors[:name].to_sentence%></div>
+   
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, class:"textBox" %>
+    <div class="error_message"><%= @user.errors[:last_name].to_sentence%></div>
+
+    <%= form.label :email %>
+    <%= form.text_field :email, class:"textBox", disabled:true%>
+    <div class="error_message"><%= @user.errors[:email].to_sentence%></div>
+
+    <%= form.submit t('.save_button'), class:"btn new_user" %>
+<% end %>

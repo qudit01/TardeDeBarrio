@@ -1,0 +1,12 @@
+<tr id="<%= dom_id(student)%>">
+  <td class="table_field table_name"><%= link_to student.full_name, student, class:"table-field" %></td>
+  <td class="table_field"><%= student.age %></td>
+  <td class="table_field"><%= student.school %></td>
+  <td class="table_field"><%= t(".#{student.goes}") %></td>
+  <td>
+    <%=link_to image_tag("edit.png", class:"icon_edit"), edit_student_path(student), data: {turbo_frame: "modal"} if policy(student).edit?%>
+    <%=link_to student_path(student), data: {turbo_method: :delete, turbo_confirm: t('.delete_warning') } do %>
+    <%= image_tag("delete.png", class:"icon_delete") if policy(student).delete? %>
+    <% end %>
+  </td>
+</tr>

@@ -1,0 +1,34 @@
+<section>
+  <header class="superior">
+    <p><%= t('.students') %><span class="name"> <%= student.full_name%> </span></p>
+  </header>
+
+  <div class="row">
+    <div class="row-left" data-controller="add">
+      <h2><%= student.full_name%></h2>
+      <h4 class="name"><%= t('.student_data') %></h4>
+      <p><%= student.address %></p>
+      <h4><%= t('.schooling_attained') %></h4>
+      <p><%= student.school %></p>
+      <h4><%= t('.schooled') %></h4>
+      <p><%= t(".#{student.goes}") %></p>
+      <h4><%= t('.fav_assignment') %></h4>
+      <h4><%= t('.dif_assignment') %></h4>
+      <h4 class="name"><%= t('.objective') %></h4>
+      <p><% student.objective_list.each do |obj|  %>
+        <input data-add-target="todo" data-action="click->add#task" type="checkbox"><%= obj %>
+        <%end if policy(Objective).index? %>
+      </p>
+    </div>
+
+    <div class="row-right">
+      <h4 class="comments"> <%= t('.comms') %> </h4>
+      <div>
+        <%= render 'comments/comments_form' %>
+        <div class="comments_list">
+          <%= render student.comments_list.where(highlight: true), klass: "coment highlight" %>
+          <%= render student.comments_list, klass: "coment" %>
+        </div>
+      </div>
+    </div>
+</section>

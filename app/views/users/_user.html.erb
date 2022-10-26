@@ -1,0 +1,14 @@
+<tr id="<%= dom_id(user)%>" data-controller="block" data-block-url-value="<%= change_status_user_path(user)%>">
+  <td class= "table_field table_name"><%= user.full_name%></td>
+  <td class= "table_field"><%= user.email%></td>
+  <% if policy(user).edit?%>
+    <td class= "table_field"><%= user.status if policy(user).change_status?%></td>
+    <td class= "table_field"><%= user.rol if policy(user).edit? %></td>
+    <td><%= link_to t('.edit_user'), edit_user_path(user), data:{turbo_frame: "modal"} if policy(user).edit? %></td>
+    <%if policy(user).change_status? %>
+      <td><button id="<%= dom_id(user, :button)%>"
+          data-action= "click->block#changeStatus">
+          <%= t('.toggle_button') %></button></td>
+    <%end%>
+  <%end%>
+</tr>

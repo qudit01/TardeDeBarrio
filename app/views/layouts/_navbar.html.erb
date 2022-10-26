@@ -1,0 +1,10 @@
+<section class="nav_header">
+  <nav class="nav_pad">
+    <ul class="nav_links">
+      <li class="nav_menu"><%= link_to image_tag("menu-desplegable.png"), class:"nav_item" %></li>
+      <li><%= link_to image_tag("home.png"), users_path, class:"nav_item" %></li>
+      <li><%= link_to "Students", students_path, class:"nav_item" %></li>
+      <li class="nav_user"><%= link_to current_user.name, user_path(current_user), class:"nav_item"%></li>
+    </ul>
+  </nav>
+</section>

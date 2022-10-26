@@ -1,0 +1,34 @@
+<section class="index_user">
+  <div class="filter_user">
+    <%= form_with(model: @filter, url: users_path, method: :get, class: "form_user") do |form| %>
+    <%= form.search_field :query, class:"search-field"%>
+    <%= form.button class:"search-button" do %>
+    <%= image_tag 'search.png'%>
+    <% end %>
+    <% end %>
+    <%= link_to image_tag("Adduser.png", class: 'icon_add')+t('.new_user'), 
+        new_user_path,  data:{turbo_frame: "modal"}, class: 'btn new_user' if policy(User).new?%>
+  </div>
+  <section>
+    <table class='users_table'>
+      <thead>
+        <tr class='head_table'>
+          <th class='name'><%= t('.users') %></th>
+          <th class='name'><%= t('.email') %></th>
+          <% if policy(User).edit? %>
+            <th class='name'><%= t('.active') %></th>
+            <th class='name'><%= t('.rol') %></th>
+            <th class='name'><%= t('.actions') %></th>
+            <th class='name'><%= t('.activate') %></th>
+          <%end%>
+        </tr>
+      </thead>
+      <tbody id="users">
+        <%= render users %>
+      </tbody>
+    </table>
+  </section>
+  <footer style="text-align: center;">
+    <%== pagy_nav(@pagy) %>
+  </footer>
+</section>

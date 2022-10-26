@@ -1,0 +1,43 @@
+.form_container {
+  background: #FFFFFF;
+  width: 100%;
+  max-width: 33%;
+  margin: 1% 33%; 
+  border-radius: 0.5rem;
+  padding: 1rem;
+  padding: 0.5rem 1.25rem 1.75rem 1.25rem;
+  box-shadow: -0.438rem 0.438rem 1.875rem rgba(0, 76, 92, 0.2);
+  position: relative;
+}
+
+.form_container::before {
+  content: "";
+  background: #0090AF;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4.375rem;
+  position: absolute;
+  z-index: 2;
+  border-radius: .3125rem;
+}
+
+.error_message {
+  color: red;
+  font-size: .75rem;
+  text-align: center;
+}
+
+.title {
+  background-color: #0090AF;
+  z-index: 3;
+  position: relative;
+}
+
+.add_edit_title {
+  color: white;
+}
+
+.form_margin_top {
+  margin: 2rem 1rem 0 0;
+}

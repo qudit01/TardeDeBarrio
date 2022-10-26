@@ -1,0 +1,260 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   "true": "foo"
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+en:
+  sign_ins:
+    show:
+      enter: "Login to my account"
+      session: "Session"
+      signup: "Sign Up"
+      logout: "Logout"
+    form:
+      pass: "Password"
+      remember: "Remember me"
+      login: "Log in"
+      email: "Email"
+      email_ph: "Enter your email here..."
+      pass_ph: "Enter you password here..."
+      pass_forgotten: "I forgot my password!"
+      g_login: "Login using Google"
+    create:
+        success: "Login successful!"
+        failure: "Login failed!"
+    destroy:
+        success: "Logged out!"
+        failure: "Logout failed!"
+  users:
+    create:
+      success: "User created successfully!"
+      failure: "User not created"
+    update:
+      success: "User updated successfully"
+      failure: "User not modified"
+    show:
+      logout: "Logout"
+      welcome: "Welcome %{name}"
+      ur_email: "Your email is: %{email}" 
+    index:
+      logout: "Logout"
+      email: "Email"
+      user: "Users"
+      new_user: "New user"
+      welcome: "Welcome %{name}"
+      ur_email: "Your email is: %{email}"
+      new_user: "New user"
+      users: "Users"
+      email: "Email"
+      active: "Active"
+      rol: "Rol"
+      actions: "Actions"
+      activate: "Activate"
+    edit: 
+      tittle: "Edit user"
+    new:
+      tittle: "New user"
+    form_edit:
+      save_button: "Save"
+    form:
+      register_button: "Register user"
+    user:
+      edit_user: "Edit"
+      toggle_button: "Deactivate"
+  students:
+    student:
+      true: "Yes"
+      false: "No"
+      delete_warning: "Are you sure?"
+    comments:
+      publish: "Publish"
+    form:
+      register: "Register student"
+      goes: "Goes to school?"
+      yes: "Yes"
+      no: "No"
+    index:
+      yes: "Yes"
+      no: "No"
+      new_student: "New Student"
+      student: "Student"
+      age: "Age"
+      schooling_attained: "Schooling Attained"
+      schooled: "Schooled"
+    show:
+      true: "Yes"
+      false: "No"
+      student_data: "Student information"
+      birthday: "Birthday"
+      schooling_attained: "Schooling Attained"
+      schooled: "Schooled"
+      address: "Address"
+      fav_assignment: "Favorites Subjects"
+      dif_assignment: "Most Difficult Subject"
+      objective: "Objectives"
+      comms: "Comments"
+      publish_btn: "Publish"
+      today: "Today"
+      high_publ: "Highligh publication"
+      students: "Students >"
+    edit:
+      tittle: "Edit Student"
+      register: "Save"
+    new:
+      tittle: "New Student"
+      register: "Register student"
+      not_authenticated: "Please login first"
+    form_edit:
+      save_button: "Save"
+    create:
+      success: "Student created successfully!"
+      failure: "Student not created"
+    update:
+      success: "Student updated successfully"
+      failure: "Student not modified"
+  comments:
+    comments: "Comment"
+    publish_btn: "Publish"
+    today: "Today"
+    high_publ: "Highlight publication"
+    create:
+      success: "Comment created successfully!"
+      failure: "Comment not created"
+    comments_form:
+      placeholder: "Write your comment here. You can use '@' to mention a user."
+      highlight: "Highlight comment"
+  answers:
+    answer: "Answer"
+    create:
+      success: "Answer created successfully!"
+      failure: "Answer not created"
+    answer_form:
+      placeholder: "Write your answer here. You can use '@' to mention a user."
+  activerecord: 
+    errors:
+      messages:
+        blank: "This field can't be empty"
+      models:
+        user:
+          attributes:
+            name:
+              empty: "This field can't be empty"
+              invalid: "must contain only letters"
+            last_name:
+              empty: "This field can't be empty"
+              invalid: "must contain only letters"
+            password: 
+              empty: "This field can't be empty"
+              too_short: "Is too short, must containt at least 3 characters"
+              invalid: "must include uppercase & number" 
+            email:
+              invalid: "must contain only letters, '.', '-', '-' or numbers"
+              empty: "This field can't be empty"
+              taken: "This email is already taken"
+  controllers: 
+    errors:
+      messages:
+        blank: "This field can't be empty"
+    application:
+      not_authenticated: "Please login first"
+  pundit:
+    default: 'You cannot perform this action.'
+    not_authorized: 'You are not authorized!'
+    resolve: 
+      not_implemented: "You must define #resolve in %{class}"
+    update?: 'You cannot edit this user!'
+    create?: 'You cannot create users!'
+    destroy?: 'You cannot delete this user!'
+    show?: 'You cannot see this user!'
+    index?: 'You cannot see users!'
+    edit?: 'You cannot edit this user!'
+    new?: 'You cannot create users!'
+    not_found: 'Resource not found!'
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%H:%M"
+      shorter: "%A %d of %b"
+      birthday: "%-d/%-m/%y"
+  date:
+    formats:
+      default: "%m-%d-%Y"
+      long: "%B %d, %Y"
+      short: "%b %d"
+      shorter: "%A %d of %b"
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    - 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    month_names:
+    - 
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - :month
+    - :day
+    - :year
+    not_found: 'Resource not found!'

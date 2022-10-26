@@ -1,0 +1,257 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   "true": "foo"
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+es:
+  sign_ins:
+    show:
+      enter: "Ingresar a mi cuenta"
+      session: "Sesión"
+      signup: "Registro"
+      logout: "Cerrar sesión"
+    form:
+      email: "Email"
+      email_ph: "Ingresa tu mail aquí..."
+      pass: "Contraseña"
+      pass_ph: "Ingresa tu contraseña aquí..."
+      pass_forgotten: "¡Olvidé mi contraseña!"
+      login: "Ingresar"
+      g_login: "Ingresar con Google"
+      remember: "Recordarme"
+    create:
+      success: "Ingreso exitoso!"
+      failure: "Ingreso erróneo..."
+    destroy:
+      success: "Desconección exitosa!"
+      failure: "Desconexión errónea..."      
+  users:
+    create:
+      success: "Usuario creado con éxito!"
+      failure: "No se pudo crear el usuario..."
+    update:
+      success: "Usuario modificado con éxito!"
+      failure: "No se pudo modificar el usuario..."
+    show:
+      logout: "Cerrar Sesion"
+      welcome: "Bienvenidx %{name}"
+      ur_email: "Su email es: %{email}" 
+    index:
+      logout: "Cerrar Sesion"
+      welcome: "Bienvenidx %{name}"
+      ur_email: "Su email es: %{email}"
+      toggle_button: "Desactivar"   
+      new_user: "Crear usuario"
+      users: "Usuarios"
+      email: "Email"
+      active: "Habilitado"
+      rol: "Rol"
+      actions: "Acciones"
+      activate: "Activar"
+      user: "Usuarios"
+    edit:
+      tittle: "Editar usuario"
+    new:
+      tittle: "Nuevo usuario"
+    form_edit:
+      save_button: "Guardar"
+    form:
+      register_button: "Registrar usuario"
+    user:
+      edit_user: "Editar"
+      toggle_button: "Desactivar"
+  students:
+    student:
+      true: "Si"
+      false: "No"
+      delete_warning: "Esta seguro?"
+    form:
+      register: "Registrar estudiante"
+      goes: "Va a la escuela?"
+      yes: "Si"
+      no: "No"
+      true: "Si"
+      false: "No"
+    index:
+      yes: "Si"
+      no: "No"
+      new_student: "Nuevo Estudiante"
+      student: "Estudiante"
+      age: "Edad"
+      schooling_attained: "Escolaridad Alcanzada"
+      schooled: "Escolarizado"
+    show:
+      true: "Si"
+      false: "No"
+      student_data: "Datos del estudiante"
+      birthday: "Fecha de nacimiento"
+      schooling_attained: "Grado de escolaridad"
+      schooled: "Escolarizado"
+      address: "Domicilio"
+      fav_assignment: "Materias preferidas"
+      dif_assignment: "Materia con mayor dificultad"
+      objective: "Objetivos"
+      comms: "Comentarios"
+      publish_btn: "Publicar"
+      today: "Hoy"
+      high_publ: "Destacar publicación"
+      students: "Estudiantes >"
+    edit:
+      tittle: "Editar Estudiante"
+    new:
+      tittle: "Nuevo Estudiante"
+      register: "Registrar estudiante"
+      not_authenticated: "Por favor, ingrese sesión"
+    form_edit:
+      save_button: "Guardar"
+    create:
+      success: "Estudiante creado exitosamente!"
+      failure: "Estudiante no creado"
+    update:
+      success: "Estudiante modificado exitosamente!"
+      failure: "Estudiante no modificado"
+  comments:
+    comments: "Comentarios"
+    publish_btn: "Publicar"
+    today: "Hoy"
+    high_publ: "Destacar publicación"
+    create:
+      success: "Comentario creado exitosamente!"
+      failure: "Comentario no creado"
+    comments_form:
+      placeholder: "¿Que desea publicar?. puede utilizar '@' para mencionar personas."
+      highlight: "Destacar comentario"
+  answers:
+    answer: "Responder"
+    create:
+      success: "Respuesta creada exitosamente!"
+      failure: "Respuesta no creada"
+    answer_form:
+      placeholder: "Escribe tu respuesta. Recuerde que puedes utilizar '@' para mencionar personas."
+  activerecord:
+    errors:
+      messages:
+        blank: "Este campo no puede estar vacío"
+      models:
+        user:
+          attributes:
+            name:
+              invalid: "Solo puede contener: Letras"
+              empty: "no puede estar vacio"
+            last_name:
+              invalid: "Solo puede contener: Letras"
+              empty: "no puede estar vacio"
+            password: 
+              too_short: "Es demasiado pequeña, debe tener al menos 3 caractéres"
+              invalid: "Debe incluir una mayúscula y un número" 
+              empty: "no puede estar vacio"
+            email:
+              invalid: "Solo puede contener: Letras, '.', '-', '-', números"
+              taken: "Éste email ya está tomado"
+              empty: "no puede estar vacio"
+  controllers:
+    errors:
+      messages:
+        blank:  "Este campo no puede estar vacío"
+    application:
+      not_authenticated: "Por favor, ingrese sesión"
+  pundit:
+    default: 'No tenes permiso para realizar esta acción'
+    not_authorized: 'No tenes permisos!'
+    resolve: 
+      not_implemented: "Debes tener definido: #resolve en %{class}"
+    update?: 'No podes editar este usuario!'
+    create?: 'No podes crear usuarios!'
+    destroy?: 'No podes eliminar este usuario!'
+    show?: 'No podes ver este usuario!'
+    edit?: 'No podes editar este usuario!'
+    new?: 'No podes crear usuarios!'
+    index?: 'No podes ver usuarios!'
+    not_found: 'No se encontró el recurso'
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%H:%M"
+      shorter: "%A %d de %b"
+      birthday: "%-d/%-m/%y"
+  date:
+    abbr_day_names:
+    - dom
+    - lun
+    - mar
+    - mié
+    - jue
+    - vie
+    - sáb
+    abbr_month_names:
+    - 
+    - ene
+    - feb
+    - mar
+    - abr
+    - may
+    - jun
+    - jul
+    - ago
+    - sep
+    - oct
+    - nov
+    - dic
+    day_names:
+    - Domingo
+    - Lunes
+    - Martes
+    - Miércoles
+    - Jueves
+    - Viernes
+    - Sábado
+    formats:
+      default: "%d/%m/%Y"
+      long: "%A, %d de %B de %Y"
+      short: "%A %d de %b"
+    month_names:
+    - 
+    - enero
+    - febrero
+    - marzo
+    - abril
+    - mayo
+    - junio
+    - julio
+    - agosto
+    - septiembre
+    - octubre
+    - noviembre
+    - diciembre
+    order:
+    - :day
+    - :month
+    - :year
+  de: "de"

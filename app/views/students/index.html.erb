@@ -1,0 +1,33 @@
+<section class="index_user">
+  <div class="filter_user">
+    <%= form_with(model: @filter, url: students_path, method: :get, class: "form_user") do |form| %>
+      <%= form.search_field :query, class:"search-field"%>
+      <button type="submit" class="search-button">
+        <%= image_tag 'search.png' %>
+      </button>
+    <% end %>
+    <%= link_to new_student_path, data:{turbo_frame: "modal"}, class: 'btn new_user' do %>
+      <%= image_tag("Adduser.png", class: 'icon_add') %>
+      <%= t('.new_student') %>
+    <% end if policy(Student).new?%>
+  </div>
+  <section>
+    <table class='users_table'>
+      <thead>
+        <tr class='head_table'>
+          <th class='name'><%= t('.student') %></th>
+          <th class='name'><%= t('.age') %></th>
+          <th class='name'><%= t('.schooling_attained') %></th>
+          <th class='name'><%= t('.schooled') %></th>
+        </tr>
+      </thead>
+      <tbody id="students">
+        <%= render students %>
+      </tbody>
+    </table>
+  </section>
+  <footer style="text-align: center;">
+    <%== pagy_nav(@pagy) %>
+  </footer>
+</section>
+
